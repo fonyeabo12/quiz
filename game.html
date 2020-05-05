@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Quiz App - Play</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="game.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="game" class="justify-center flex-column">
+        <div id="display">
+          <div id="display item">
+            <p class="display-prefix" id= "questioncounter">Question</p>
+            <h1 class="display-text"></h1>
+          </div>
+          <div id="display item">
+            <p class="display-prefix">score</p>
+            <h1 class="display-text" id="score"></h1>
+          </div>
+        </div>
+        <h2 id="question">What does JS stand for?</h2>
+        <div class="option-container">
+          <p class="option-prefix">A</p>
+          <p class="option-text" data-number="1">Justify Save</p>
+        </div>
+        <div class="option-container">
+          <p class="option-prefix">B</p>
+          <p class="option-text" data-number="2">Java scene</p>
+        </div>
+        <div class="option-container">
+          <p class="option-prefix">C</p>
+          <p class="option-text" data-number="3">Java Script</p>
+        </div>
+        <div class="option-container">
+          <p class="option-prefix">D</p>
+          <p class="option-text" data-number="4">Join Script</p>
+        </div>
+        <div class="option-container">
+          <p class="option-prefix">E</p>
+          <p class="option-text" data-number="5">Jimmy Sall</p>
+        </div>
+      </div>
+    </div>
+    <script src="game.js"></script>
+  </body>
+</html>
