@@ -64,24 +64,24 @@ let questions = [
 const CORRECT_BONUS = 5;
 const MAX_QUESTIONS = 5;
 
-startGame = () => {
+function startGame () {
   questionCounter = 0;
   score = 0;
   availableQuesions = [...questions];
   getNewQuestion();
 };
 
-getNewQuestion = () => {
+function getNewQuestion () {
   if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
     localStorage.setItem('mostRecentScore', score)
-    return window.location.assign("end.html");
+    return window.location.assign("Quiz-over.html");
   }
   questionCounter++;
   const questionIndex = Math.floor(Math.random() * availableQuesions.length);
-  currentQuestion = availableQuesions[questionIndex];
+  let currentQuestion = availableQuesions[questionIndex];
   question.innerText = currentQuestion.question;
 
-  option.forEach(option => {
+  option.forEach(function(option) {
     const number = option.dataset["number"];
     option.innerText = currentQuestion["option" + number];
   });
@@ -90,22 +90,21 @@ getNewQuestion = () => {
   acceptingAnswers = true;
 };
 
-option.forEach(option => {
-  option.addEventListener("click", e => {
+option.forEach(function(option) {
+  option.addEventListener("click", function() {
     if (!acceptingAnswers) return;
 
     acceptingAnswers = false;
-    const selectedoption = e.target;
+    const selectedoption = event.target;
     const selectedAnswer = selectedoption.dataset["number"];
 
     const classToApply = selectedAnswer== currentQuestion.answer ? "correct" : "Incorrect";
 
     selectedoption.parentElement.classList.add(classToApply);
 
-    setTimeout( () => {
+    setTimeout(function(setTimeout) {
       selectedoption.parentElement.classList.remove(classToApply);
 
-    console.log(classToApply);
     getNewQuestion();
     }, 1000)
     

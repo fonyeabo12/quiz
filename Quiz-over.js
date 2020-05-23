@@ -9,7 +9,7 @@ const MAX_BONUS = 5;
 
 finalScore.innerText = mostRecentScore;
 
-initials.addEventListener("keyup", () => {
+initials.addEventListener("click", function() {
   saveScoreBtn.disabled = !initials.value;
 });
 
